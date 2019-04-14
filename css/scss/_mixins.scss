@@ -1,0 +1,21 @@
+@mixin border-radius($radius: 4px) {
+  -webkit-border-radius:$radius !important;
+  -moz-border-radius:$radius !important;
+  border-radius:$radius !important;
+}
+@mixin box-shadow($color,$x,$y,$feather) {
+  -webkit-box-shadow: $color $x $y $feather;
+  -moz-box-shadow: $color $x $y $feather;
+  box-shadow: $color $x $y $feather;
+}
+@mixin transition($duration) {
+  -webkit-transition: $duration ease;
+  -moz-transition: $duration ease;
+  -ms-transition: $duration ease;
+  -o-transition: $duration ease;
+  transition: $duration ease;
+}
+@mixin white-rounded {
+  background-color: $white;
+  @include border-radius(4px);
+}

@@ -1,0 +1,149 @@
+@each $align in $align-map {
+  .text-#{$align} {
+    text-align: $align;
+  }
+}
+
+.container-fluid {
+  position: relative;
+}
+.container {
+  max-width: $grid-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+
+[class*="col-"] {
+  margin: 0 $gutter/2;
+  padding: $font-size $gutter/1.5;
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+.no-gap {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.no-gap-t {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.no-gap-r {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+.no-gap-b {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.no-gap-l {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.col-auto {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.visible {
+  display: block;
+}
+.visible-flex {
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+
+
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-center {
+  align-items: center;
+}
+.align-stretch {
+  align-items: stretch;
+}
+.align-baseline {
+  align-items: baseline;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+.align-self-baseline {
+  align-self: baseline;
+}
+
+@for $i from 1 through $cols {
+  .col-#{$i} {
+    flex-basis: $i*(100%/$cols) - $gutter;
+  }
+  .order-#{$i} {
+    order: $i;
+  }
+  .offset-#{$i - 1} {
+    margin-left: ($i - 1)*(100%/$cols);
+  }
+}
+
+@each $suffix, $value in $break-points {
+  @media screen and (max-width: $value) {
+
+    @for $i from 1 through $cols {
+      .col-#{$suffix}-#{$i} {
+        flex-basis: $i*(100%/$cols) - $gutter;
+      }
+      .order-#{$suffix}-#{$i} {
+        order: $i;
+      }
+      .offset-#{$suffix}-#{$i - 1} {
+        margin-left: ($i - 1)*(100%/$cols);
+      }
+    }
+
+  }
+}

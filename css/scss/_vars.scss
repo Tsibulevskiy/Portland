@@ -1,0 +1,27 @@
+$sans: 'Montserrat', sans-serif;
+$serif: 'Crimson Text', serif;
+$font-size: 16px;
+
+$grid-width: 1200px;
+$cols: 12;
+$gutter: 2.5%;
+$gap: 30px;
+$break-points: (
+        xs: 575px,
+        s: 767px,
+        m: 991px,
+        l: 1199px
+);
+$align-map: left, right, center, justify;
+
+$black: #1c1e23;
+$active: #343e5c;
+$inactive: #b9bed1;
+$bg: #e4e5e7;
+$border: #f0f2f7;
+$border-darker: #dfe4ee;
+$white: #ffffff;
+$action-btn: #2754eb;
+$check-button: #00e2aa;
+$radion-btn: #00deea;
+$coral: #f7442d;
